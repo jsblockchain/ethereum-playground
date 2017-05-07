@@ -1,10 +1,10 @@
 pragma solidity ^0.4.4;
 
 contract Notary {
-  mapping (bytes32 => bool) private proofs;
+  bytes32[] private proofs;
 
   function storeProof(bytes32 proof) {
-    proofs[proof] = true;
+    proofs.push(proof);
   }
 
   function notarize(string document) {
@@ -22,6 +22,15 @@ contract Notary {
   }
 
   function hasProof(bytes32 proof) constant returns (bool) {
-    return proofs[proof];
+    for (var i = 0; i < proofs.length; i++) {
+      if (proofs[i] == proof) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function getProofs() constant returns (bytes32[]) {
+    return proofs;
   }
 }
