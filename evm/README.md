@@ -8,4 +8,6 @@ _An EVM compiler doesn’t exactly optimize for bytecode size or speed or memory
 $ solc --bin --asm simple.sol
 $ solc --bin --asm two_vars.sol
 $ solc --bin --asm --optimize two_vars_packed.sol
+$ solc --bin --asm --optimize six_vars.sol
+$ solc --bin --asm --optimize uninitialized.sol
 ```
