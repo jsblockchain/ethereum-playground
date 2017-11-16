@@ -11,3 +11,7 @@ $ solc --bin --asm --optimize two_vars_packed.sol
 $ solc --bin --asm --optimize six_vars.sol
 $ solc --bin --asm --optimize uninitialized.sol
 ```
+
+## Learnings 
+- Storage is expensive
+- Optimizer doesn't work across tags
